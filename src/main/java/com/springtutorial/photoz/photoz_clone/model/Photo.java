@@ -1,4 +1,4 @@
-package com.springtutorial.photoz.photoz_clone;
+package com.springtutorial.photoz.photoz_clone.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotEmpty;
@@ -7,6 +7,7 @@ public class Photo {
     private String id;
     @NotEmpty
     private String fileName;
+    private String contentType;
     @JsonIgnore
     private byte[] data;
 
@@ -20,6 +21,14 @@ public class Photo {
 
     public Photo(){
         //ToDo
+    }
+
+    public String getContentType() {
+        return contentType;
+    }
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
     }
 
     public Photo(String id, String fileName) {
